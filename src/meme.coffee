@@ -82,7 +82,7 @@ module.exports = (robot) ->
   robot[listen_func] /(.*)\s*BITCH PLEASE\s*(.*)/i, id: 'meme.bitch-please', (msg) ->
     memeGenerator msg, 'jo9J0Q', msg.match[1], msg.match[2]
 
-  robot[listen_func] /(.*)\s*COURAGE\s*(.*)/i, id: 'meme.courage', (msg) ->
+  robot[listen_func] /(.*)\s* COURAGE \s*(.*)/i, id: 'meme.courage', (msg) ->
     memeGenerator msg, 'IMQ72w', msg.match[1], msg.match[2]
 
   robot[listen_func] /ONE DOES NOT SIMPLY (.*)/i, id: 'meme.not-simply', (msg) ->
