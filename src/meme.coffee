@@ -94,8 +94,8 @@ module.exports = (robot) ->
   robot[listen_func] /(.*)TROLLFACE(.*)/i, id: 'meme.trollface', (msg) ->
     memeGenerator msg, 'mEK-TA', msg.match[1], msg.match[2]
 
-  robot[listen_func] /(IF .*), ((ARE|CAN|DO|DOES|HOW|IS|MAY|MIGHT|SHOULD|THEN|WHAT|WHEN|WHERE|WHICH|WHO|WHY|WILL|WON\'T|WOULD)[ \'N].*)/i, id: 'meme.philosoraptor', (msg) ->
-    memeGenerator msg, '-kFVmQ', msg.match[1], msg.match[2] + (if msg.match[2].search(/\?$/)==(-1) then '?' else '')
+  robot[listen_func] /(IF .*), ((ARE|CAN|DO|DOES|HOW|IS|MAY|MIGHT|SHOULD|THEN|WHAT|WHEN|WHERE|WHICH|WHO|WHY|WILL|WON\'T|WOULD)[ \'N].*)\?/i, id: 'meme.philosoraptor', (msg) ->
+    memeGenerator msg, '-kFVmQ', msg.match[1], msg.match[2]
 
   robot[listen_func] /(.*)(A+ND IT\'S GONE.*)/i, id: 'meme.its-gone', (msg) ->
     memeGenerator msg, 'uIZe3Q', msg.match[1], msg.match[2]
