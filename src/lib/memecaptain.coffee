@@ -45,6 +45,10 @@ module.exports = (msg, imageID, upperText, lowerText) ->
   baseError = 'Sorry, I couldn\'t generate that meme.'
   reasonError = 'Unexpected status from memecaptain.com:'
 
+  # Remove robot name
+  pattern = new RegExp('^' + msg.robot.name + ' ')
+  upperText = upperText.replace(pattern, '')
+
   processResult = (err, res, body) ->
     return msg.reply "#{baseError} #{err}" if err
     if res.statusCode == 301
